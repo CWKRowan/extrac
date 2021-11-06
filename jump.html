@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Jump</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <style>
+            div{
+                display: flex;
+                box-sizing: border-box;
+                padding: 5px;
+            }
+            #body{
+                padding-top: 100px;
+            }
+            input[type=button]{
+                color: #5ca4a9;
+                background-color: #e6ebe0;
+                margin-top: 15px;
+                font-size: 20px;
+            }
+            h1{
+                text-align: left;
+                padding: 10px;
+                display: inline-block;
+                color: #FFF;
+            }
+            form{
+                text-align: left;
+                margin-left: 15px;
+            }
+            input[type=text] {
+                background-color: #5ca4a9;
+                color: white;
+            }
+            select{
+                background-color: #5ca4a9;
+                color: white;
+            }
+            #header {
+              padding-top: 0;
+              margin-top: 0;
+              box-sizing: border-box;
+              background-color: #e6ebe0;
+              position: fixed;
+              width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Jump</h1>
+        </div>
+        <form id = "body" name = "form" method = "post" >
+            <div id = "box">
+                <div id = 'first'>
+                    <input type='text' id='left'/>
+                </div>
+                <div id = 'second'>
+                    <input type = "button" id = "submit" value = "JUMP>" onclick = "validate()"/>
+                </div>
+                <div id = 'third'>
+                    <input type='text' id='right'/>
+                </div>
+            </div>
+        <script language="javascript">
+        document.getElementById("left").value = "abc";
+        function validate(){
+            if(document.getElementById("left").value != ""){
+                temp = document.getElementById("left").value;
+                document.getElementById("left").value = "";
+                document.getElementById("right").value = temp;
+                document.getElementById("submit").value = "<JUMP";
+                
+            }else{
+                temp = document.getElementById("right").value;
+                document.getElementById("left").value = temp;
+                document.getElementById("right").value = "";
+                document.getElementById("submit").value = "JUMP>";
+            }
+        }
+    </script>
+    </body>
+</html>
